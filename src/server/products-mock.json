@@ -1,0 +1,38 @@
+[
+   {
+      "idProduct": 1,
+      "name": "Produto 1",
+      "price": 45,
+      "image": "https://media.istockphoto.com/photos/savory-curry-with-beef-picture-id477851317?s=612x612"
+   },
+   {
+      "idProduct": 2,
+      "name": "Produto 2",
+      "price": 22.6,
+      "image": "https://media.istockphoto.com/photos/pan-fried-duck-picture-id1081422898?s=612x612"
+   },
+   {
+      "idProduct": 3,
+      "name": "Produto 3",
+      "price": 213,
+      "image": "https://media.istockphoto.com/photos/ahi-tuna-with-cucumber-radish-carrots-and-avocado-picture-id1400290250?s=612x612"
+   },
+   {
+      "idProduct": 4,
+      "name": "Produto 3",
+      "price": 17,
+      "image": "https://media.istockphoto.com/photos/female-chef-in-a-white-uniform-and-a-black-apron-in-the-restaurant-picture-id1226531074?s=612x612"
+   },
+   {
+      "idProduct": 5,
+      "name": "Produto 3",
+      "price": 89.2,
+      "image": "https://media.istockphoto.com/photos/male-hands-adding-vegetable-salad-white-salt-picture-id1144814461?s=612x612"
+   },
+   {
+      "idProduct": 6,
+      "name": "Produto 3",
+      "price": 100.99,
+      "image": "https://media.istockphoto.com/photos/preparing-ahi-tuna-with-cucumber-radish-carrots-and-avocado-picture-id1336342020?s=612x612"
+   }
+]
