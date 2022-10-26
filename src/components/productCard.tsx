@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
 
 import { IProductInfo } from "../interfaces/productCard-interface"
 
@@ -11,8 +10,6 @@ interface IProductCardProps {
 function ProductCard(props: IProductCardProps) {
 
     const { product } = props
-    
-    const dispatch = useDispatch()
 
     const [labelButton, setLabelButton] = useState<string>("Adicionar produto no carrinho") 
 
