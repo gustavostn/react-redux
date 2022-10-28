@@ -1,3 +1,7 @@
+export interface ICartState {
+    products: IProductInfo[]
+}
+
 export interface IProductInfo {
     idProduct: number;
     name: string;

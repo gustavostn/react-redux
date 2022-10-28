@@ -1,7 +1,9 @@
 
 import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
 
 import { IProductInfo } from "../interfaces/productCard-interface"
+import { decrement, increment } from "../redux/cart/counterSlice"
 
 interface IProductCardProps {
     product: IProductInfo
@@ -10,6 +12,8 @@ interface IProductCardProps {
 function ProductCard(props: IProductCardProps) {
 
     const { product } = props
+    
+    const dispatch = useDispatch()
 
     const [labelButton, setLabelButton] = useState<string>("Adicionar produto no carrinho") 
 
@@ -25,17 +29,26 @@ function ProductCard(props: IProductCardProps) {
         setProductInfo(product)
         setLabelButton(getButtonLabel(Boolean(product.product_in_card)))
     }, [product])
-
     
     function handleClickInProductButton(): void {
-        productInfo.product_in_card = !productInfo.product_in_card
+        const productInCart = !productInfo.product_in_card
+        productInfo.product_in_card = productInCart
         setProductInfo(productInfo)
-        setLabelButton(getButtonLabel(productInfo.product_in_card))    
+        setLabelButton(getButtonLabel(productInCart))
+        handleProductsInCart(productInCart)
     }
 
     function getButtonLabel(productInCart: boolean): string {
         if(productInCart) return "Remover produto do carrinho"
         return "Adicionar produto no carrinho"
+    }
+
+    function handleProductsInCart(addProduct: boolean): void {
+        if(addProduct) {
+            dispatch(increment())
+            return
+        } 
+        dispatch(decrement())
     }
 
     return (
