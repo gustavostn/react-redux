@@ -4,33 +4,34 @@ import ProductCard from "../components/productCard"
 
 import { IProductInfo } from "../interfaces/productCard-interface"
 import { useDispatch, useSelector } from "react-redux"
-import { reset } from "../redux/cart/counterSlice"
+import { clearValues, reset } from "../redux/cart/counterSlice"
 import { useEffect, useState } from "react"
 
 function Menu() {
 
     const dispatch = useDispatch()
-    const count =  useSelector((state: any) => state.counter.counter)
+    const count = useSelector((state: any) => state.counter.counter)
 
     const [products, setProducts] = useState<any[]>([])
 
     useEffect(() => {
         setProducts(mock)
-    
-      return () => {
-        setProducts([])
-      }
+
+        return () => {
+            setProducts([])
+        }
     }, [mock])
-    
+
 
     function handleResetCart(): void {
-        const allProducts = products.map((product: IProductInfo) => { 
-            product.product_in_card = false 
+        const allProducts = products.map((product: IProductInfo) => {
+            product.product_in_card = false
             return product
         })
-        
+
         setProducts(allProducts)
         dispatch(reset())
+        setTimeout(() => { dispatch(clearValues()) }, 200);
     }
 
     return (
