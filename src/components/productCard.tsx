@@ -3,16 +3,23 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import { IProductInfo } from "../interfaces/productCard-interface"
-import counterSlice, { decrement, decrementByAmount, increment, incrementByAmount } from "../redux/cart/counterSlice"
+import { decrement, decrementByAmount, increment, incrementByAmount } from "../redux/cart/counterSlice"
 
 interface IProductCardProps {
     product: IProductInfo
 }
 
+interface ICartSlice {
+    counter: {
+        counter: number;
+        resetValues: boolean;
+    }
+}
+
 function ProductCard(props: IProductCardProps) {
 
     const { product } = props
-    const { resetValues } = useSelector((counterSlice: any) => counterSlice.counter)
+    const { resetValues } = useSelector((counterSlice: ICartSlice) => counterSlice.counter)
 
     const dispatch = useDispatch()
 
